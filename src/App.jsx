@@ -1,22 +1,26 @@
 import React, { Component } from 'react'
-import { Route, Switch, Link } from 'react-router-dom'
-import Product from './components/Product'
-import OneProdicut from './components/OneProdicut'
+import {Link, Switch, Route} from 'react-router-dom'
+import Login from './Pages/Login'
+import Cars from './Pages/Cars'
+import OneCarPage from './Pages/OneCarPage'
 export default class App extends Component {
-    render() {
-        return (
-            <div className='container'>
-                <h2>App</h2>
-                <div className="my-2">
-                    <Link to={'/'}> <button className='btn btn-success'>HOME</button> </Link>
-                    <Link to={'/product'}> <button className='btn btn-success'>Product</button> </Link>
+  render() {
+    return (
+      <div className='container'>
+            <div className="row my-4">
+                <div className="col-md-10 offset-1">
+                    <Link to='/' className='btn btn-dark'>Home</Link>
+                    <Link to='/login' className='btn btn-primary float-end'>Login</Link>
                 </div>
-                <hr />
-                <Switch>
-                    <Route path={'/product/:id/:name/:weight/:company/:info'} component={OneProdicut} />
-                    <Route path={'/product'} component={Product} />
-                </Switch>
             </div>
-        )
-    }
+            <hr />
+            <Switch>
+                <Route path='/cars/:id/:name/:year/:mator/:color/:price' component={OneCarPage}/>
+                <Route path='/cars' component={Cars}/>
+                <Route path='/login' component={Login}/>
+            </Switch>
+
+      </div>
+    )
+  }
 }
