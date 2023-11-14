@@ -35,7 +35,7 @@ export default class Login extends Component {
                         </div>
                         <div className="card-body">
                             <div className="my-3">
-                                <label>Login</label>
+                                <label>Loginku</label>
                                 <input type="text"  value={this.state.login} onChange={this.LoginVal} className='form-control' placeholder='Example@gmail.com' />
                             </div>
                             <div className="my-3">
